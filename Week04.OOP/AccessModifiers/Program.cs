@@ -1,30 +1,19 @@
-﻿namespace AccessModifiers
+﻿using StudentProject;
+
+namespace StudentApp
 {
     class Program
     {
         static void Main(string[] args)
         {
-        }
-    }
+            var s = new Student(); // trebuie sa adaugam referinta catre proiectul student project
 
-    public class Student
-    {
-        string cnp;
+            s.Nume = "Andrei";
+            s.Prenume = "Sct";
 
-        // prop pt cnp
-        public string Cnp
-        {
-            get { return cnp; }
-            set { cnp = value; }
-        }
+            //System.Console.WriteLine(s.FullName);
 
-        // auto property
-        public string Name { get; set; }
-
-        // dinamyc property & readonly
-        public string FullDescription
-        {
-            get { return $"{cnp} - {Name}"; }
+            s.Print();
         }
     }
 }
