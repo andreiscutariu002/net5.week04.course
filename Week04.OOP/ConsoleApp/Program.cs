@@ -1,42 +1,40 @@
-﻿using System;
-
-namespace ConsoleApp
+﻿namespace ConsoleApp
 {
     class Program
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine("Hello from program ...");
+            // point1 is an instance of class Point
+            Point point1 = new Point(2, 3);
+            point1.Print();
 
-            int a = ReadNumber();
-            int b = ReadNumber();
+            // point2 is an instance of class Point
+            Point point2 = new Point(5, 10);
+            point2.Print();
 
-            int difResult = Dif(a, b);
+            //Point.Print(); - nu merge, pt ca metoda print trebuie accesata prin instanta
 
-            Console.WriteLine($"{a} - {b} = {difResult}");
+            point1.Print();
+        }
+    }
 
-            int addResult = Add(a, b);
+    class Point
+    {
+        // field
+        int x;
 
-            Console.WriteLine($"{a} + {b} = {difResult}");
+        // field
+        int y;
+
+        public Point(int xParam, int yParam)
+        {
+            this.x = xParam;
+            this.y = yParam;
         }
 
-        public static int ReadNumber()
+        public void Print()
         {
-            Console.Write("Enter a number: ");
-
-            string input = Console.ReadLine();
-
-            return int.Parse(input);
-        }
-
-        public static int Add(int a, int b)
-        {
-            return a + b;
-        }
-
-        public static int Dif(int a, int b)
-        {
-            return a - b;
+            System.Console.WriteLine($"Point: x={this.x}, y={this.y}");
         }
     }
 }
